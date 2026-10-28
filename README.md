@@ -61,6 +61,12 @@ dsh plugin --profile <profile> add D:\code\dsh-pitchkit
 
 DSH 会把声明了 `dsh.bundle` 的依赖自动登记进 `dsh.profile.bundles`。
 
+> **桌面版注意**：`desktop` 这个 profile 由 Electron 应用独占管理，命令行会直接拒绝
+> （`error: profile "desktop" is managed exclusively by the Electron application`）。
+> 在桌面版里请用应用内的插件面板安装；或者手动在 `<DSH_HOME>/profiles/desktop/package.json` 里加上
+> `"dsh-pitchkit": "github:lube845/dsh-PitchKit#v0.2.0"`、把 `dsh-pitchkit` 追加进 `dsh.profile.bundles`，
+> 再在该目录执行 `pnpm install`，然后重启应用。
+
 **验证**：下一轮对话的工具列表里出现 `talk_track` 即为生效。
 
 ### 卸载
