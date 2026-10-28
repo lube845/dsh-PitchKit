@@ -1,11 +1,13 @@
-# dsh-talk-track
+# dsh-PitchKit
 
 > 给 [DeepSeek Harness](https://github.com/deepseek-ai) 的商务沟通话术插件：把「客户不回我了」「这周得催款」这类口语交代，变成**结构骨架 + 三版可直接发的稿子 + 对方可能的回应 + 合规体检 + 发前待确认清单**。
 
+> A DeepSeek Harness plugin that turns a rough business situation into a structured outreach draft — 12 scene templates, three tone variants (steady / warm / push), and a compliance pass, with placeholders instead of invented facts.
+
+![test](https://github.com/lube845/dsh-PitchKit/actions/workflows/test.yml/badge.svg)
 ![node](https://img.shields.io/badge/node-%3E%3D22-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![deps](https://img.shields.io/badge/dependencies-0-green)
-![tests](https://img.shields.io/badge/tests-14%20passed-brightgreen)
 
 ```
 你：帮我写封跟进邮件，客户是制造企业采购张经理，卡预算，方案发过去两周没回音，想约本周五前确认配置项
@@ -41,8 +43,8 @@ DSH 的用户 patch 层支持直接写路径，插件不必装进 profile 的 `n
 ```yaml
 # <DSH_HOME>/profiles/<profile>/cordis.patch.yml
 - insert:
-    - id: talk-track
-      name: 'D:\code\dsh-talk-track\lib\index.js'
+    - id: pitch-kit
+      name: 'D:\code\dsh-pitchkit\lib\index.js'
 ```
 
 `name` 以盘符 / `/` / `./` / `../` 开头时会被转成 file URL 直接加载。保存后这一层 patch 即时重组；
@@ -52,9 +54,9 @@ DSH 的用户 patch 层支持直接写路径，插件不必装进 profile 的 `n
 
 ```powershell
 # 需要 pnpm 在 PATH 上
-dsh plugin --profile <profile> add github:<owner>/dsh-talk-track
+dsh plugin --profile <profile> add github:lube845/dsh-PitchKit
 # 或者本地目录
-dsh plugin --profile <profile> add D:\code\dsh-talk-track
+dsh plugin --profile <profile> add D:\code\dsh-pitchkit
 ```
 
 DSH 会把声明了 `dsh.bundle` 的依赖自动登记进 `dsh.profile.bundles`。
@@ -63,7 +65,7 @@ DSH 会把声明了 `dsh.bundle` 的依赖自动登记进 `dsh.profile.bundles`�
 
 ### 卸载
 
-删掉 patch 里那条 `- insert: … talk-track …`（方式 A），或 `dsh plugin --profile <profile> remove dsh-talk-track`（方式 B），下一轮对话工具即消失。
+删掉 patch 里那条 `- insert: … pitch-kit …`（方式 A），或 `dsh plugin --profile <profile> remove dsh-pitchkit`（方式 B），下一轮对话工具即消失。
 
 ## 用法
 

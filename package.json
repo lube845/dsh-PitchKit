@@ -1,6 +1,6 @@
 {
-  "name": "dsh-talk-track",
-  "version": "0.1.0",
+  "name": "dsh-pitchkit",
+  "version": "0.2.0",
   "description": "DeepSeek Harness 插件：商务沟通话术工作台。场景骨架 + 三版改写 + 合规体检，缺信息只留占位，不编造。",
   "type": "module",
   "main": "./lib/index.js",
@@ -35,8 +35,17 @@
     "sales",
     "follow-up",
     "business-writing",
+    "pitch",
     "chinese"
   ],
   "author": "lube",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lube845/dsh-PitchKit.git"
+  },
+  "homepage": "https://github.com/lube845/dsh-PitchKit#readme",
+  "bugs": {
+    "url": "https://github.com/lube845/dsh-PitchKit/issues"
+  }
 }
