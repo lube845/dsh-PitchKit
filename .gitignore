@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# 本机状态：profile 备份、沙箱/ACL 修复产物
+.profile-backup/
+.acl-recovery/
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+*.tmp
+.probe
